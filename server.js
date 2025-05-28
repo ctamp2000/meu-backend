@@ -15,6 +15,10 @@ const app = express();
 app.use(cors()); // ← Permite todas as origens
 app.use(express.json());
 
+app.get("/", (req, res) => {
+  res.send("API do Cadastro de Usuários está no ar!");
+});
+
 // Criar usuário
 app.post("/usuarios", async (req, res) => {
   await prisma.user.create({
